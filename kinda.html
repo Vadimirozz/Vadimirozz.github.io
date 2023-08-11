@@ -80,8 +80,8 @@
             </div>
             <form id="form">
                 <input types="text" placeholder="Имя" id="user_name">
-                <input types="text" placeholder="Имя" id="user_name">
-                <input types="text" placeholder="Имя" id="user_name">
+                <input types="text" placeholder="Email" id="user_email">
+                <input types="text" placeholder="Телефон" id="user_phone">
                 <button id="order">Оформить</button>
             </form>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -90,13 +90,13 @@
     let buy = document.getElementById("buy");
     let buy = document.getElementById("order");
 
-    buy.addEventListener('click', () =>{
-        document.getElementById('main').style.display = 'none';
-        document.getElementById('form').style.display = 'block';
-        document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe. user.last_name;
+    buy.addEventListener("click", () =>{
+        document.getElementById("main").style.display = "none";
+        document.getElementById("form").style.display = "block";
+        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe. user.last_name;
     });
 
-    order.addEventListener('click', () =>{
+    order.addEventListener("click", () =>{
         tg.close();
     });
 
