@@ -50,7 +50,7 @@
   transition: transform 0.3s ease-in-out; /* Плавное анимированное изменение масштаба */
         }
         input:focus {
-            border-color: #ff0000;
+            border-color: #38ff00;
         }
 
         input {
@@ -86,19 +86,38 @@
             </form>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
     let tg = window.Telegram.WebApp;
     let buy = document.getElementById("buy");
     let order = document.getElementById("order");
+    tg.expand();
 
     buy.addEventListener("click", () =>{
         document.getElementById("main").style.display = "none";
         document.getElementById("form").style.display = "block";
-        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe. user.last_name;
+        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name;
     });
 
     order.addEventListener("click", () =>{
+        let name =  document.getElementById("user_name").value;
+        let email =  document.getElementById("user_email").value;
+        let phone =  document.getElementById("user_phone").value;
+                        if(name.length < 2){
+                            document.getElementById("error").innerText = 'Ошибка в имени';
+                            return;
+                        }
+                        if(email.length < 5){
+                            document.getElementById("error").innerText = 'Ошибка в email';
+                            return;
+                        }
+                        if(phone.length < 5){
+                            document.getElementById("error").innerText = 'Ошибка в номере телефона';
+                            return;
+                        }
         tg.close();
     });
+});
+
 
 </script>
 </body>
