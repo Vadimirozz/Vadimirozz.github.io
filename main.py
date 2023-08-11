@@ -2,8 +2,10 @@ import aiogram
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types.web_app_info import WebAppInfo
 import webbrowser
+import requests
+import json
 
-bot = Bot('6420992088:AAH6y81iseLmf-65aTFWrUjGvJ6CPdmtx5w')
+bot = Bot('6420992088:AAF54eNxwBs4727TSu8sl2QDGihUwQ9UZY4')
 dp = Dispatcher(bot)
 
 
@@ -20,6 +22,11 @@ async def start_message(message: types.Message):
     await bot.send_photo(message.chat.id, photo, caption="🤗 С теплом приветствуем вас! Откройте двери в мир "
                                                          "изысканных вкусов и непередаваемых эмоций. Приятного время "
                                                          "провождения!", reply_markup=markup)
+
+@dp.message_handler(content_types=['web_app_data'])
+async def web_app_get_info(message: types.Message):
+    res = json.loads(message.web_app_data.data)
+    await message.answer(f'Новый заказ! Имя: {res["name"]}. Email: {res["email"]}. Телефон: {res["phone"]}. Комментарий к заказу: {res["comment"]}')
 
 
 executor.start_polling(dp)

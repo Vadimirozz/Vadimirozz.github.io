@@ -82,6 +82,7 @@
                 <input types="text" placeholder="Имя" id="user_name">
                 <input types="text" placeholder="Email" id="user_email">
                 <input types="text" placeholder="Телефон" id="user_phone">
+                <textarea name="comment" placeholder="comment"  cols="40" rows="3"></textarea>
                 <div id="error"></div>
                 <button id="order">Оформить</button>
             </form>
@@ -104,6 +105,7 @@
         let name =  document.getElementById("user_name").value;
         let email =  document.getElementById("user_email").value;
         let phone =  document.getElementById("user_phone").value;
+        let comment =  document.getElementById("user_comment").value;
                         if(name.length < 3){
                             document.getElementById("error").innerText = 'Ошибка в имени';
                             return;
@@ -120,8 +122,8 @@
                         let data = {
                             name: name,
                             email: email,
-                            phone: phone
-
+                            phone: phone,
+            comment: comment
         }
                         tg.sendData(JSON.stringify(data));
 
