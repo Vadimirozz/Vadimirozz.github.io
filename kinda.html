@@ -83,6 +83,7 @@
                 <input types="text" placeholder="Email" id="user_email">
                 <input types="text" placeholder="Телефон" id="user_phone">
                 <input types="text" placeholder="Комментарий к заказу" id="user_comment">
+                <input types="time" placeholder="Время готовности заказа" id="user_time" name="appt" min="09:00" max="18:00" required />
                 <div id="error"></div>
                 <button id="order">Оформить</button>
             </form>
@@ -106,6 +107,7 @@
         let email =  document.getElementById("user_email").value;
         let phone =  document.getElementById("user_phone").value;
         let comment =  document.getElementById("user_comment").value;
+        let time =  document.getElementById("user_time").value;
                         if(name.length < 3){
                             document.getElementById("error").innerText = 'Ошибка в имени';
                             return;
@@ -123,7 +125,8 @@
                             name: name,
                             email: email,
                             phone: phone,
-            comment: comment
+            comment: comment,
+                            time: time
         }
                         tg.sendData(JSON.stringify(data));
 

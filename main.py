@@ -26,7 +26,7 @@ async def start_message(message: types.Message):
 @dp.message_handler(content_types=['web_app_data'])
 async def web_app_get_info(message: types.Message):
     res = json.loads(message.web_app_data.data)
-    await message.answer(f'Новый заказ! Имя: {res["name"]}. Email: {res["email"]}. Телефон: {res["phone"]}. Комментарий к заказу: {res["comment"]}')
+    await message.answer(f'Новый заказ! Имя: {res["name"]}. Email: {res["email"]}. Телефон: {res["phone"]}. Время готовности заказа: {res["time"]}. Комментарий к заказу: {res["comment"]}')
 
 
 executor.start_polling(dp)
