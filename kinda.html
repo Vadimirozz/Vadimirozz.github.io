@@ -44,12 +44,20 @@
         button:hover {
             background: var(--th-theme-secondary-bg-color);
         }
+        .img-container img{
+             width: 100%; /* Заполнить контейнер полностью */
+  height: auto; /* Автоматическая высота, чтобы сохранить пропорции изображения */
+  transition: transform 0.3s ease-in-out; /* Плавное анимированное изменение масштаба */
+
+        }
     </style>
 </head>
 <body>
     <div id="main">
         <h1>Ресторан</h1>
+        <div class="img-container">
         <img src="https://png.pngtree.com/png-vector/20230321/ourmid/pngtree-modern-kitchen-food-box-italian-pizza-png-image_6651521.png">
+            </div>
         <p>Text about restaurant</p>
         <button id="buy">Купить</button>
     </div>
