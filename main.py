@@ -14,8 +14,8 @@ async def start_message(message: types.Message):
     #btn2 = types.InlineKeyboardButton('👍🏻Отзывы', url='https://reviews.yandex.ru/ugcpub/cabinet')
     #btn4 = types.InlineKeyboardButton('🗑Корзина', callback_data='bin')
     #markup.add(btn1, btn2, btn4)
-    markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton("WebApp", web_app=WebAppInfo(url='https://vadimirozz.github.io/kinda.html')))
+    markup = types.ReplyKeyboardMarkup()
+    markup.add(types.KeyboardButton("WebApp", web_app=WebAppInfo(url='https://vadimirozz.github.io/kinda.html')))
     photo = open('p.jpg', 'rb')
     await bot.send_photo(message.chat.id, photo, caption="🤗 С теплом приветствуем вас! Откройте двери в мир "
                                                          "изысканных вкусов и непередаваемых эмоций. Приятного время "
