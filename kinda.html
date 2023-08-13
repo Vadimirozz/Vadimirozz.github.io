@@ -13,13 +13,17 @@
             box-sizing: border-box;
         }
 
+        .logo_menu {
+            text-align: center;
+        }
+
         body {
             font-family: 'Source Serif pro', serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
-        }
-        #main{
+        }s
+        #menu{
             width: 100%;
             padding: 20px;
             text-align: center;
@@ -62,6 +66,14 @@
             border: 2px solid silver;
             border-radius: 5px;
         }
+        .product {
+            width: 150px;
+            height: 200px;
+            padding: 15px 10px;
+            border: 2px solid silver;
+            border-radius: 5px;
+
+        }
 
         #form {
             display: none;
@@ -70,14 +82,20 @@
     </style>
 </head>
 <body>
-            <div id="main">
-                <h1>Ресторан</h1>
-                <div class="img-container">
-                <img src="https://png.pngtree.com/png-vector/20230321/ourmid/pngtree-modern-kitchen-food-box-italian-pizza-png-image_6651521.png">
-                    </div>
-                <p>Text about restaurant</p>
+    <header>
+        <div id='logo_menu' class='logo_menu'>
+        <h1>Меню</h1>
+        </div>
+    </header>
+            <div id="menu">
+                <div id='product' class='product'>
+
+                </div>
+
+                
                 <button id="buy">Купить</button>
             </div>
+
             <form id="form">
                 <input types="text" placeholder="Имя" id="user_name">
                 <input types="text" placeholder="Email" id="user_email">
@@ -96,7 +114,7 @@
     tg.expand();
 
     buy.addEventListener("click", () =>{
-        document.getElementById("main").style.display = "none";
+        document.getElementById("menu").style.display = "none";
         document.getElementById("form").style.display = "block";
         document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name;
     });
