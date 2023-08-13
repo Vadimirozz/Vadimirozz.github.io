@@ -66,12 +66,28 @@
             border: 2px solid silver;
             border-radius: 5px;
         }
-        .product {
-            width: 150px;
+        .product1 {
+            width: 325px;
             height: 200px;
-            padding: 15px 10px;
-            border: 2px solid silver;
+            border: 3px solid silver;
             border-radius: 5px;
+            margin-right: 15px;
+            margin: 15px;
+        }
+
+        .product2 {
+            width: 325px;
+            height: 200px;
+            border: 3px solid silver;
+            border-radius: 5px;
+            margin-left: 15px;
+            margin: 15px;
+        }
+
+        .twoblock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
         }
 
@@ -87,12 +103,13 @@
         <h1>Меню</h1>
         </div>
     </header>
-            <div id="menu">
-                <div id='product' class='product'>
+            <div id="menu" class='menu'>
+                <div id='twoblock' class='twoblock'>
+                    <div id='product1' class='product1'></div>
+                    <div id='product2' class='product2'></div>
 
                 </div>
 
-                
                 <button id="buy">Купить</button>
             </div>
 
