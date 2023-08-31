@@ -35,7 +35,7 @@
         button {
             border: 0;
             border-radius: 5px;
-            margin-top: 50px;
+            margin-top: 20px;
             height: 60px;
             width: 200px;
             font-size: 20px;
@@ -66,6 +66,14 @@
             border: 2px solid silver;
             border-radius: 5px;
         }
+.separator {
+            width: 100%;
+            height: 0.5px;
+            background-color: grey;
+            margin-top: 150px;
+            margin-: 0.5px 0;
+            align-items: center;
+        }
         .product1 {
             width: 200px;
             height: 150px;
@@ -86,6 +94,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 95px;
 
         }
         .img1 {
@@ -100,14 +109,7 @@
             display: none;
             text-align: center;
         }
-        .separator {
-            width: 100%;
-            height: 0.5px;
-            background-color: grey;
-            margin-top: 200px;
-            margin-: 0.5px 0;
-            align-items: center;
-        }
+
         .buy_button {
             display: flex;
             justify-content: center;
@@ -116,6 +118,7 @@
 .order_bin_button {
     margin-bottom: 45px;
     margin-left: 15px;
+    margin-top: 47px;
 border: 0;
             border-radius: 15px;
             height: 35px;
@@ -135,6 +138,7 @@ border: 0;
             justify-content: center;
             align-items: center;
             height: 50px;
+            margin-right: 50px;
         }
     </style>
 </head>
@@ -187,12 +191,136 @@ border: 0;
 
                 </div>
 
-                <div class="separator"></div>
+                <div id='twoblock' class='twoblock'>
+                    <div id='product1' class='product1'>
+                        <img class='img1' src="https://i.ibb.co/NKkSRBg/pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521.png" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='195px' height="145px">
+                                    <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Королевская</h3>
+                                                        <p class="order_description">   Тесто, соус «Бургер», ветчина, </p>
+                                                        <p class="order_description">    курица, креветки, лук красный,
+                                                        <p class="order_description">    сыр моцарелла  </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div id='product2' class='product2'>
+                        <img class='img2' src="https://i.ibb.co/j5Zg30f/pngtree-gourmet-pizza-cartoon-png-image-6656160.png" alt="pngtree-gourmet-pizza-cartoon-png-image-6656160" border="0" width='195px' height="145px">
+                        <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Хот-дог</h3>
+                            <p class="order_description">   Тесто, соус томатный, </p>
+                                                            <p class="order_description">   колбаски охотничьи, </p>
+                                                                <p class="order_description">   морковь по-корейски, </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id='twoblock' class='twoblock'>
+                    <div id='product1' class='product1'>
+                        <img class='img1' src="https://i.ibb.co/NKkSRBg/pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521.png" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='195px' height="145px">
+                                    <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Королевская</h3>
+                                                        <p class="order_description">   Тесто, соус «Бургер», ветчина, </p>
+                                                        <p class="order_description">    курица, креветки, лук красный,
+                                                        <p class="order_description">    сыр моцарелла  </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div id='product2' class='product2'>
+                        <img class='img2' src="https://i.ibb.co/j5Zg30f/pngtree-gourmet-pizza-cartoon-png-image-6656160.png" alt="pngtree-gourmet-pizza-cartoon-png-image-6656160" border="0" width='195px' height="145px">
+                        <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Хот-дог</h3>
+                            <p class="order_description">   Тесто, соус томатный, </p>
+                                                            <p class="order_description">   колбаски охотничьи, </p>
+                                                                <p class="order_description">   морковь по-корейски, </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id='twoblock' class='twoblock'>
+                    <div id='product1' class='product1'>
+                        <img class='img1' src="https://i.ibb.co/NKkSRBg/pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521.png" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='195px' height="145px">
+                                    <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Королевская</h3>
+                                                        <p class="order_description">   Тесто, соус «Бургер», ветчина, </p>
+                                                        <p class="order_description">    курица, креветки, лук красный,
+                                                        <p class="order_description">    сыр моцарелла  </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+                    <div id='product2' class='product2'>
+                        <img class='img2' src="https://i.ibb.co/j5Zg30f/pngtree-gourmet-pizza-cartoon-png-image-6656160.png" alt="pngtree-gourmet-pizza-cartoon-png-image-6656160" border="0" width='195px' height="145px">
+                        <div id="textorderid" class="textorderid">
+                                        <h3>Пицца Хот-дог</h3>
+                            <p class="order_description">   Тесто, соус томатный, </p>
+                                                            <p class="order_description">   колбаски охотничьи, </p>
+                                                                <p class="order_description">   морковь по-корейски, </p>
+                                    </div>
+                        <div class="money_bin">
+                            <div class=money_order_data">
+                                <h3>550₽</h3>
+                            </div>
+                            <div class="order_bin">
+                                <button class="order_bin_button">
+                                    Выбрать
+                                </button>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+<div class="separator"></div>
 
                 <div id='buy' class='buy_button'>
                 <button>Купить</button>
                 </div>
-                
+
             </div>
 
             <form id="form">
