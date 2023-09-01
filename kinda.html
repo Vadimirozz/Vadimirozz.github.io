@@ -108,6 +108,10 @@
             display: none;
             text-align: center;
         }
+        .bin {
+            display: none;
+            text-align: center;
+        }
 
         .buy_button {
             display: flex;
@@ -533,7 +537,7 @@
         </div>
         <div id='twoblock' class='twoblock'>
             <div id='product1' class='product1'>
-                <img class='img1' src="https://i.ibb.co/NKkSRBg/pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521.png" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='146px' height="109px">                        <div class="order_main_data">
+                <img class='img1' src="https://i.ibb.co/kGNqWkP/photo-2023-08-31-22-15-19.jpg" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='146px' height="109px">                        <div class="order_main_data">
                 <div id="textorderid" class="textorderid">
                     <h4>Креветки в кляре 6 шт (+соус сладкий чили)</h4>
                     <p class="order_description"></p>
@@ -551,7 +555,7 @@
             </div>
             </div>
             <div id='product2' class='product2'>
-                <img class='img1' src="https://i.ibb.co/NKkSRBg/pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521.png" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='146px' height="109px">                        <div class="order_main_data">
+                <img class='img1' src="https://i.ibb.co/kGNqWkP/photo-2023-08-31-22-15-19.jpg" alt="pngtree-modern-kitchen-food-box-italian-pizza-png-image-6651521" border="0" width='146px' height="109px">                        <div class="order_main_data">
                 <div id="textorderid" class="textorderid">
                     <h4>Креветки в кляре 9 шт (+соус сладкий чили)</h4>
                     <p class="order_description"></p>
@@ -1264,7 +1268,9 @@
                     <button>Купить</button>
                 </div>
 </div>
-
+<div class="bin" id="bin">
+    <h1>Корзина</h1>
+</div>
 
 
         <form id="form">
@@ -1287,7 +1293,7 @@
                 buy.addEventListener("click", () =>{
                     document.getElementById("menu").style.display = "none";
                     document.getElementById("form").style.display = "block";
-                    document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name;
+                    document.getElementById("bin").style.display = "block";
                 });
 
                 order.addEventListener("click", () =>{
