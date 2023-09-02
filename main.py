@@ -38,7 +38,7 @@ async def first_bot(token, queue, bro_queue, dp):
 
 async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
     bot = Bot(token)
-    first_bot_dp = Bot("6420992088:AAHP4c1sKi6Y5PqkL_5FsOqVUu3CvJ0y8vo")
+    first_bot_dp = Bot("6420992088:AAFYmy6IOvBinguNeVt32cxUl14wHzcP5KQ")
 
     markup = InlineKeyboardMarkup(row_width=3)
     btn1 = InlineKeyboardButton('✅', callback_data='accept')
@@ -63,7 +63,21 @@ async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
         await callback_query.answer("Cancel button is pressed")
         await bot.delete_message(callback_query.message.chat.id, callback_query.message.message_id)
 
+    @dp.callback_query_handler(lambda c: c.data == 'reschedule')
+    async def reschedule_callback(callback_query: CallbackQuery, state: FSMContext):
+        await send_action(callback_query, "Выберите новое время для заказа:")
+        async with state.proxy() as data:
+            await state.set_state("newtime")
+            data['user_id'] = callback_query.from_user.id
 
+    async def send_action(callback_query: CallbackQuery, action_text: str):
+        await callback_query.answer()
+        await callback_query.message.answer(action_text)
+
+    @dp.message_handler(state="newtime")
+    async def process_newtime(message: types.Message, state: FSMContext):
+        async with state.proxy() as data:
+            data['new_time'] = message.text
 
         # Завершаем состояние
     async def send_action(entity, action_text: str):
@@ -85,8 +99,8 @@ async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
     asyncio.create_task(process_orders(queue, bot, markup))
 
 async def main():
-    token1 = "6420992088:AAHP4c1sKi6Y5PqkL_5FsOqVUu3CvJ0y8vo"
-    token2 = "6200911169:AAEbz5LusAjv92z6j3vDHJ-RSX4EHgIAc3Q"
+    token1 = "6420992088:AAFYmy6IOvBinguNeVt32cxUl14wHzcP5KQ"
+    token2 = "6357406772:AAERsvxoGW_YjnY6wZbiz6jICjAIuF0_fsA"
 
     queue = asyncio.Queue()
     bro_queue = asyncio.Queue()
