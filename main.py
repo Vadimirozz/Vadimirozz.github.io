@@ -64,7 +64,7 @@ async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
         await bot.delete_message(callback_query.message.chat.id, callback_query.message.message_id)
 
 
-    
+
         # Завершаем состояние
     async def send_action(entity, action_text: str):
         await entity.answer(action_text)
