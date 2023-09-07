@@ -109,7 +109,6 @@
             text-align: center;
         }
         .bin {
-            display: none;
             text-align: center;
         }
 
@@ -169,6 +168,12 @@
     <div id='buy' class='buy_button'>
                     <button>Купить</button>
                 </div>
+        <div class="bin">
+            <h2>Корзина</h2>
+                <div id="shopping_cart_contents">
+
+                </div>
+        </div>
     <div class="separator"></div>
     <h2 id="Pizza" class="navigation_item">Пицца</h2>
     <div id='twoblock' class='twoblock'>
@@ -183,7 +188,7 @@
                     <h4>600р</h4>
                 </div>
                 <div id="buy_button" class="buy_button">
-                    <button id="order_bin_button" class="order_bin_button">Выбрать</button>
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
                 </div>
 
             </div>
@@ -197,7 +202,9 @@
                 <div class=money_order_data">
                     <h4>550р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
 
@@ -214,7 +221,9 @@
                 <div class=money_order_data">
                     <h4>520р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         <div id='product2' class='product2'>
@@ -226,7 +235,9 @@
                 <div class=money_order_data">
                     <h4>550р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
 
@@ -242,7 +253,9 @@
                 <div class=money_order_data">
                     <h4>530р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         <div id='product2' class='product2'>
@@ -254,7 +267,9 @@
                 <div class=money_order_data">
                     <h4>500р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
 
@@ -271,7 +286,9 @@
                 <div class=money_order_data">
                     <h4>650р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -285,7 +302,9 @@
                 <div class=money_order_data">
                     <h4>380р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -302,7 +321,9 @@
                 <div class=money_order_data">
                     <h4>480р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -316,7 +337,9 @@
                 <div class=money_order_data">
                     <h4>380р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -333,7 +356,9 @@
                 <div class=money_order_data">
                     <h4>590р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -347,7 +372,9 @@
                 <div class=money_order_data">
                     <h4>500р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         </div>
@@ -364,7 +391,9 @@
                 <div class=money_order_data">
                     <h4>500р</h4>
                 </div>
-
+<div id="buy_button" class="buy_button">
+                    <button data-product-id="order_bin_button" class="order_bin_button">Выбрать</button>
+                </div>
             </div>
         </div>
         <div id='product2' class='product2'></div>
@@ -918,5 +947,56 @@
                 });
             });
         </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const addToCartButtons = document.querySelectorAll(".order_bin_button");
+    const shoppingCartContents = document.getElementById("shopping_cart_contents");
+
+    const cart = {};
+
+    // Загрузка информации о продуктах из JSON файла
+    fetch("product_data.json")
+        .then(response => response.json())
+        .then(products => {
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const productId = this.getAttribute("data-product-id");
+                    if (cart[productId]) {
+                        cart[productId]++;
+                    } else {
+                        cart[productId] = 1;
+                    }
+                    updateCartContents(products);
+                });
+            });
+
+            // Функция для обновления корзины с учетом информации о продуктах из JSON
+            function updateCartContents(products) {
+                shoppingCartContents.innerHTML = "";
+                let total = 0;
+
+                for (const productId in cart) {
+                    if (products[productId]) {
+                        const product = products[productId];
+                        const productName = product.name;
+                        const productPrice = product.price;
+                        const quantity = cart[productId];
+                        const subtotal = productPrice * quantity;
+
+                        const productInfo = `<p>${productName} x ${quantity} = ${subtotal}р</p>`;
+                        shoppingCartContents.innerHTML += productInfo;
+
+                        total += subtotal;
+                    }
+                }
+
+                shoppingCartContents.innerHTML += `<p>Итого: ${total}р</p>`;
+            }
+        })
+        .catch(error => {
+            console.error("Ошибка при загрузке JSON файла: " + error);
+        });
+});
+</script>
 </body>
 </html>
