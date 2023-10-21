@@ -18,7 +18,7 @@ async def first_bot(token, queue, bro_queue, dp):
 
 
         markup = types.ReplyKeyboardMarkup()
-        markup.add(types.KeyboardButton("WebApp", web_app=WebAppInfo(url='https://vadimirozz.github.io/kinda.html')))
+        markup.add(types.KeyboardButton("Сделать заказ", web_app=WebAppInfo(url='https://vadimirozz.github.io/kinda.html')))
         photo = open('p.jpg', 'rb')
         await bot.send_photo(message.chat.id, photo, caption="🤗 С теплом приветствуем вас! Откройте двери в мир "
                                                              "изысканных вкусов и непередаваемых эмоций. Приятного "
@@ -38,7 +38,7 @@ async def first_bot(token, queue, bro_queue, dp):
 
 async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
     bot = Bot(token)
-    first_bot_dp = Bot("6420992088:AAFYmy6IOvBinguNeVt32cxUl14wHzcP5KQ")
+    first_bot_dp = Bot("6420992088:AAGLVPn996FipXIeNSfc2LQA3_yz3bo9kEU")
 
     markup = InlineKeyboardMarkup(row_width=3)
     btn1 = InlineKeyboardButton('✅', callback_data='accept')
@@ -91,6 +91,7 @@ async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
                 f'Имя: {data["name"]}\n'
                 f'Номер: {data["phone"]}\n'
                 f'Email: {data["email"]}\n'
+                f'Корзина: [Позиция1, х1], [Позиция5, х2], [Позиция3, х4] \n'
                 f'Комментарий: {data["comment"]}\n'
                 f'Время готовности заказа: {data["time"]}'
             )
@@ -99,8 +100,8 @@ async def second_bot(token, queue, bro_queue, dp, first_bot_dp):
     asyncio.create_task(process_orders(queue, bot, markup))
 
 async def main():
-    token1 = "6420992088:AAFYmy6IOvBinguNeVt32cxUl14wHzcP5KQ"
-    token2 = "6357406772:AAERsvxoGW_YjnY6wZbiz6jICjAIuF0_fsA"
+    token1 = "6420992088:AAGLVPn996FipXIeNSfc2LQA3_yz3bo9kEU"
+    token2 = "6425261423:AAEQ4CGmibeDRRnUfX2VZAF_BpwbWhT_vSY"
 
     queue = asyncio.Queue()
     bro_queue = asyncio.Queue()
