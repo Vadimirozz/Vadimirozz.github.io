@@ -7,11 +7,50 @@
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+
+      input:focus {
+            border-color: #38ff00;
+        }
+
+      input {
+           width: 90%;
+           outline: none;
+           margin: 10px 5%;
+           padding: 15px 10px;
+           font-size: 14px;
+           border: 2px solid silver;
+           border-radius: 5px;
+      }
+
+      button {
+            border: 0;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+      }
+    </style>
   </head>
   <body>
     <main>
-        <h1>Welcome to My Website</h1>  
+        <form id="form">
+            <input types="text" placeholder="ФИО ребёнка" id="name">
+            <input types="text" placeholder="Возраст" id="age">
+            <input types="text" placeholder="Пол" id="gender">
+            <input types="text" placeholder="Вес" id="weight">
+            <input types="text" placeholder="Рост" id="height">
+            <input types="text" placeholder="Рост" id="address">
+            <button id="order">Отправить</button>
+        </form>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script> 
+        <script src="index.js"></script>
     </main>
-	<script src="index.js"></script>
   </body>
 </html>
