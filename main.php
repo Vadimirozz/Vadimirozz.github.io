@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("twitteroauth/twitteroauth/twitteroauth.php"); // Путь к библиотеке twitteroauth
+require_once("twitteroauth.php"); // Путь к библиотеке twitteroauth
 $twitteruser = "12hook165838"; // Замените на имя пользователя Twitter
 $consumerkey = "adO8bRwuF4kSerPcDCCLcFuTx"; // Замените на ваш Consumer Key
 $consumersecret = "ekzPZX6SYdhKzKqXqUfKtvL1oEnG2pKGWfjgnPJty6mcPrAH4A"; // Замените на ваш Consumer Secret
