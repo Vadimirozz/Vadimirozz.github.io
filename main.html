@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Subscriptions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="main">
-        <h1>Redirect</h1>
-    </div>
+    <div id="subscriptions"></div>
 
+    <script>
+        $(document).ready(function() {
+            // Replace these values with your Twitter username and API credentials
+            var twitterUsername = "12hook165838";
+            var apiUrl = "https://api.twitter.com/1.1/friends/list.json?screen_name=" + twitterUsername;
 
+            // Make AJAX request to Twitter API
+            $.ajax({
+                url: apiUrl,
+                type: "GET",
+                dataType: "json",
+                beforeSend: function(xhr) {
+                    // Add your Twitter API credentials here
+                    xhr.setRequestHeader("Authorization", "Bearer YOUR_TWITTER_API_KEY");
+                },
+                success: function(data) {
+                    // Process the response data
+                    var subscriptions = data.users.map(function(user) {
+                        return user.screen_name;
+                    });
+                    
+                    // Display the subscriptions in the HTML
+                    $("#subscriptions").html("<h2>Twitter Subscriptions</h2><ul>" + subscriptions.map(function(sub) {
+                        return "<li>" + sub + "</li>";
+                    }).join("") + "</ul>");
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching subscriptions:", error);
+                    $("#subscriptions").html("<p>Error fetching subscriptions. Please try again later.</p>");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
