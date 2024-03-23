@@ -1,124 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Telegram Web App</title>
     <style>
-
-      * {
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-      }
-
-      body {
-          font-family: 'Source Serif pro', serif;
-          font-weight: 200;
-          color: var(--tg-theme-text-color);
-          background: var(--tg-theme-bg-color);
+            background-color: #f0f0f0;
         }
 
-      #form {
-          text-align: center;
-      }
-
-      input:focus {
-            border-color: #38ff00;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-      input {
-           width: 90%;
-           outline: none;
-           margin: 10px 5%;
-           padding: 15px 10px;
-           font-size: 14px;
-           border: 2px solid silver;
-           border-radius: 5px;
-      }
-
-      button {
-            border: 0;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            height: 60px;
-            width: 200px;
-            font-size: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
-      }
-
-      button:hover {
-            background: var(--tg-theme-secondary-bg-color);
-        }
-
+        /* Add more styles as needed */
     </style>
-  </head>
-  <body>
-    <main>
-        <form id="form">
-            <input types="text" placeholder="ФИО ребёнка" id="name">
-            <input types="text" placeholder="Возраст" id="age">
-            <input types="text" placeholder="Пол" id="gender">
-            <input types="text" placeholder="Вес" id="weight">
-            <input types="text" placeholder="Рост" id="height">
-            <input types="text" placeholder="Адрес" id="address">
-            <input types="text" placeholder="Телефон" id="phone">
-            <div id="error"></div>
-            <button id="order">Отправить</button>
+</head>
+<body>
+    <div class="container">
+        <h1>Telegram Web App</h1>
+        <!-- Your content goes here -->
+        <form id="telegram-form">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <button type="submit">Send</button>
         </form>
-        <script src="https://telegram.org/js/telegram-web-app.js"></script> 
-        <script>
-          
-          document.addEventListener("DOMContentLoaded", () => {
-                let tg = window.Telegram.WebApp;
-                tg.expand();
+        <div id="messages">
+            <!-- Display messages from Telegram here -->
+        </div>
+    </div>
 
-          order.addEventListener("click", () =>{
-                    document.getElementById("error").innerText = '';
-                    let name =  document.getElementById("name").value;
-                    let age =  document.getElementById("age").value;
-                    let phone =  document.getElementById("phone").value;
-                    let gender =  document.getElementById("gender").value;
-                    let address =  document.getElementById("address").value;
-                    let weight =  document.getElementById("weight").value;
-                    let height =  document.getElementById("height").value;
-
-                    if(name.length < 3){
-                        document.getElementById("error").innerText = 'Ошибка в имени';
-                        return;
-                    }
-                    if(address.length < 5){
-                        document.getElementById("error").innerText = 'Ошибка в адрессе';
-                        return;
-                    }
-                    if(phone.length < 5){
-                        document.getElementById("error").innerText = 'Ошибка в номере телефона';
-                        return;
-                    }
-
-                    let data = {
-                        name: name,
-                        age: age,
-                        phone: phone,
-                        gender: gender,
-                        address: address,
-                        weight: weight,
-                        height: height
-                    }
-                    tg.sendData(JSON.stringify(data));
-
-                    tg.close();
-                });
-            });
-
-        </script>
-    </main>
-  </body>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // JavaScript code goes here
+        document.getElementById('telegram-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            // Implement sending message to Telegram API
+            // Example: fetch('/send-message', { method: 'POST', body: JSON.stringify({ message }) })
+            //   .then(response => response.json())
+            //   .then(data => console.log(data))
+            //   .catch(error => console.error('Error:', error));
+            // You'll need to replace the example with your actual Telegram API endpoint
+        });
+    </script>
+</body>
 </html>
