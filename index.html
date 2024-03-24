@@ -9,22 +9,29 @@
         /* CSS styles go here */
         body {
             font-family: Arial, sans-serif;
+
             margin-right: 15px;
             margin-left: 15px;
+
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
+
             display: flex;
             flex-direction: column;
             align-items: center;
+
             overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
         }
 
         .container {
             display: flex;
             align-items: center;
             flex-direction: column;
-            max-width: 800px;
-            margin: 20px auto;
+            margin: 80px auto 20px;
             padding: 20px;
             background: var(--tg-theme-bg-color);
             border-radius: 8px;
@@ -35,10 +42,12 @@
             display: flex;
             align-items: center; /* Распределение элементов по ширине */
             justify-content: center;
+
             margin: 8px auto;
             padding: 20px;
-            background: var(--tg-theme-bg-color);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            background: var(--tg-theme-bg-color);
         }
 
         .search-bar {
@@ -47,6 +56,7 @@
 
         .message {
             border-radius: 5px;
+            resize: none;
         }
 
         .filter_button {
