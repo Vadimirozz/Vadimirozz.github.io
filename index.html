@@ -10,13 +10,10 @@
         /* CSS styles go here */
         body {
             font-family: Arial, sans-serif;
-
             margin: 0;
             padding: 0;
-
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,50 +23,45 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-
             background: var(--tg-theme-bg-color);
-
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
-            
-           
-            
-            
-
+            display: flex;
+            align-items: center; /* Распределение элементов по ширине */
             width: 360px;
-            margin: 8px;
-            padding: 20px;
-
+            margin: 8px auto;
             background: var(--tg-theme-bg-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-            
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+        .search-bar {
+            margin-right: 20px;
         }
 
         /* Add more styles as needed */
     </style>
 </head>
-<header>
-    <div class="header-container">
-        <div class="search-bar">
-            <form id="search">
-                <textarea id="message" name="message" rows="1" cols="35"></textarea>
-            </form>
-        <div class="filter">
-            <button>📖</button>
-        </div>
-    </div>
-</header>
 <body>
+    <header>
+        <div class="header-container">
+            <div class="search-bar">
+                <form id="search">
+                    <textarea id="message" name="message" rows="1" cols="40"></textarea>
+                </form>
+            </div>
+            <div class="filter">
+                <button>📖</button>
+            </div>
+        </div>
+    </header>
     <div class="container">
-        <h1>Telegram</h1>
+        <h1>Telegra</h1>
         <!-- Your content goes here -->
         <div id="messages">
             <!-- Display messages from Telegram here -->
