@@ -10,10 +10,13 @@
         /* CSS styles go here */
         body {
             font-family: Arial, sans-serif;
+
             margin: 0;
             padding: 0;
+
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
+
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,26 +26,51 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
+
             background: var(--tg-theme-bg-color);
+
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            
+           
+            
+            
+
+            width: 360px;
+            margin: 8px;
+            padding: 20px;
+
+            background: var(--tg-theme-bg-color);
+
+            
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
         }
 
         /* Add more styles as needed */
     </style>
 </head>
+<header>
+    <div class="header-container">
+        <div class="search-bar">
+            <form id="search">
+                <textarea id="message" name="message" rows="1" cols="35"></textarea>
+            </form>
+        <div class="filter">
+            <button>📖</button>
+        </div>
+    </div>
+</header>
 <body>
     <div class="container">
         <h1>Telegram</h1>
         <!-- Your content goes here -->
-        <form id="telegram-form">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" cols="50"></textarea>
-            <button type="submit">Send</button>
-        </form>
         <div id="messages">
             <!-- Display messages from Telegram here -->
         </div>
@@ -51,7 +79,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         // JavaScript code goes here
-        document.getElementById('telegram-form').addEventListener('submit', function(event) {
+        document.getElementById('search').addEventListener('submit', function(event) {
             event.preventDefault();
             const message = document.getElementById('message').value;
             // Implement sending message to Telegram API
