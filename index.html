@@ -34,6 +34,7 @@
         .header-container {
             display: flex;
             align-items: center; /* Распределение элементов по ширине */
+            justify-content: center;
             margin: 8px auto;
             padding: 20px;
             background: var(--tg-theme-bg-color);
@@ -44,11 +45,16 @@
             margin-right: 20px;
         }
 
-        .filter {
+
+        .filter_button {
             border: 0;
             border-radius: 5px;
-            height: 20px;
-            width: 20px;
+            height: 25px;
+            width: 25px;
+
+            display: flex;
+            align-items: center; /* Распределение элементов по ширине */
+            justify-content: center;
         }
 
         /* Add more styles as needed */
@@ -59,7 +65,7 @@
         <div class="header-container">
             <div class="search-bar">
                 <form id="search">
-                    <textarea id="message" name="message" rows="1" cols="35"></textarea>
+                    <textarea class="message" id="message" name="message" rows="1" cols="35"></textarea>
                 </form>
             </div>
             <div class="filter">
