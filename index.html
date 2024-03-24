@@ -10,6 +10,8 @@
         /* CSS styles go here */
         body {
             font-family: Arial, sans-serif;
+            margin-right: 8px;
+            margin-left: 8px;
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
             display: flex;
@@ -33,7 +35,8 @@
             display: flex;
             align-items: center; /* Распределение элементов по ширине */
             width: 360px;
-            margin: 0px 5px 0px 5px;
+            margin: 8px auto;
+            padding: 20px;
             background: var(--tg-theme-bg-color);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -50,7 +53,7 @@
         <div class="header-container">
             <div class="search-bar">
                 <form id="search">
-                    <textarea id="message" name="message" rows="1" cols="40"></textarea>
+                    <textarea id="message" name="message" rows="1" cols="35"></textarea>
                 </form>
             </div>
             <div class="filter">
