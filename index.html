@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Telegram</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+
+            margin-right: 15px;
+            margin-left: 15px;
+
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 80px auto 20px;
+            padding: 20px;
+            background: var(--tg-theme-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center; /* Распределение элементов по ширине */
+            justify-content: center;
+
+            margin: 8px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            background: var(--tg-theme-bg-color);
+        }
+
+        .search-bar {
+            margin-right: 20px;
+        }
+
+        .message {
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .filter_button {
+            border: 0;
+            border-radius: 5px;
+            height: 20.8px;
+            width: 25px;
+
+            margin-bottom: 4px;
+
+            display: flex;
+            align-items: center; /* Распределение элементов по ширине */
+            justify-content: center;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="search-bar">
+                <form id="search">
+                    <textarea class="message" id="message" name="message" rows="1" cols="35"></textarea>
+                </form>
+            </div>
+            <div class="filter">
+                <button class="filter_button">📖</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>gg</h1>
+        <!-- Your content goes here -->
+        <div id="messages">
+            <!-- Display messages from Telegram here -->
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // JavaScript code goes here
+        document.getElementById('search').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            // Implement sending message to Telegram API
+            // Example: fetch('/send-message', { method: 'POST', body: JSON.stringify({ message }) })
+            //   .then(response => response.json())
+            //   .then(data => console.log(data))
+            //   .catch(error => console.error('Error:', error));
+            // You'll need to replace the example with your actual Telegram API endpoint
+        });
+    </script>
+</body>
+</html>
