@@ -1,0 +1,98 @@
+/* CSS styles go here */
+body {
+    font-family: Arial, sans-serif;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 0;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+}
+
+
+header {
+    width: 100%;
+}
+
+.main-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Автоматическое подгонка колонок */
+    gap: 10px;
+    width: 100%;; /* Уменьшаем ширину контейнера для более адаптивного макета */
+    margin: 20px auto; /* Центрируем блок и добавляем отступы */
+}
+
+.item {
+    background: var(--tg-theme-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.photo {
+    width: 100%; /* Делаем изображение шириной 100% от родительского блока */
+    height: auto; /* Позволяет изображению сохранять пропорции */
+    max-height: 200px; /* Ограничиваем максимальную высоту изображения */
+}
+
+.sneaker-block {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.order-button {
+    border: 0;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%; /* Растягиваем кнопку на всю ширину блока */
+    margin-top: 10px; /* Добавляем небольшой отступ между элементами */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: var(--tg-theme-bg-color);
+    width: 100%;
+    margin: 8px 0; /* Изменено на margin: 8px 0; */
+}
+
+.search-bar {
+    margin-right: 10px;
+}
+
+.message {
+    border-radius: 8px;
+    resize: none;
+    width: 100%;
+}
+
+
+.filter_button {
+    border: 0;
+    border-radius: 8px;
+    height: 29.6px;
+    width: 29.6px;
+
+    margin-bottom: 4px;
+
+    display: flex;
+    align-items: center; /* Распределение элементов по ширине */
+    justify-content: center;
+}
+
+.filter_button {
+    margin-left: 10px;
+}
+
+/* Add more styles as needed */

@@ -1,0 +1,93 @@
+/* CSS styles go here */
+body {
+    font-family: Arial, sans-serif;
+
+    margin-right: 5%;
+    margin-left: 5%;
+
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+.main-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    gap: 10px; /* Промежуток между блоками */
+    width: 90%;
+    margin-top: 100px;
+}
+
+.item {
+    background: var(--tg-theme-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 275px;
+    display: flex;
+    align-items: center; /* Распределение элементов по ширине */
+    justify-content: center;
+    flex-direction: column;
+}
+
+.photo {
+    width: 175px;
+    height: 100px;
+}
+
+.sneaker-block {
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.order-button {
+    border: 0;
+    border-radius: 5px;
+    height: 35px;
+    width: 175px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Изменено на space-between */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: var(--tg-theme-bg-color);
+    width: 100%;
+    margin: 8px 0; /* Изменено на margin: 8px 0; */
+}
+
+.search-bar {
+    margin-right: 20px;
+    width: 78%;
+}
+
+.message {
+    border-radius: 5px;
+    resize: none;
+}
+
+.filter_button {
+    border: 0;
+    border-radius: 5px;
+    height: 29.6px;
+    width: 29.6px;
+
+    margin-bottom: 4px; 
+}
+
+/* Add more styles as needed */
